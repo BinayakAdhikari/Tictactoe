@@ -5,7 +5,7 @@ Tic-tac-toe implementation in Flutter.
 ## Build
 
 ```
-git clone https://github.com/dmilicic/flutter-tic-tac-toe
+git clone https://github.com/BinayakAdhikari/flutter-tic-tac-toe
 flutter run
 ```
 
