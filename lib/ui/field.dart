@@ -63,7 +63,7 @@ class Field extends StatelessWidget {
     return GestureDetector(
       onTap: _handleTap,
       child: Container(
-        margin: const EdgeInsets.all(0.0),
+        margin: const EdgeInsets.all(3.0),
         decoration: BoxDecoration(
             border: _determineBorder(),
         ),

@@ -9,7 +9,7 @@ class Ai {
   static const int DRAW = 2;
 
   static const int EMPTY_SPACE = 0;
-  static const SYMBOLS = {EMPTY_SPACE: "", HUMAN: "X", AI_PLAYER: "O"};
+  static const SYMBOLS = {EMPTY_SPACE: "", HUMAN: "X", AI_PLAYER: "0" };
 
   // arbitrary values for winning, draw and losing conditions
   static const int WIN_SCORE = 100;
