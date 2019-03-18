@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_tic_tac_toe/ai/ai.dart';
 import 'package:flutter_tic_tac_toe/ui/field.dart';
 import 'package:flutter_tic_tac_toe/ui/game_presenter.dart';
 
 class GamePage extends StatefulWidget {
-
   final String title;
 
   GamePage(this.title);
@@ -15,10 +13,9 @@ class GamePage extends StatefulWidget {
 }
 
 class GamePageState extends State<GamePage> {
-
   List<int> board;
   int _currentPlayer;
-  
+
   GamePresenter _presenter;
 
   GamePageState() {
@@ -26,10 +23,9 @@ class GamePageState extends State<GamePage> {
   }
 
   void _onGameEnd(int winner) {
-
     var title = "Game over!";
     var content = "You lose :(";
-    switch(winner) {
+    switch (winner) {
       case Ai.HUMAN: // will never happen :)
         title = "Congratulations!";
         content = "You managed to beat an unbeatable AI!";
@@ -42,7 +38,6 @@ class GamePageState extends State<GamePage> {
         title = "Draw!";
         content = "No winners here.";
     }
-
 
     showDialog(
         context: context,
@@ -61,7 +56,7 @@ class GamePageState extends State<GamePage> {
                   child: Text("Restart"))
             ],
           );
-    });
+        });
   }
 
   void _movePlayed(int idx) {
@@ -72,13 +67,11 @@ class GamePageState extends State<GamePage> {
         // switch to AI player
         _currentPlayer = Ai.AI_PLAYER;
         _presenter.onHumanPlayed(board);
-
       } else {
         _currentPlayer = Ai.HUMAN;
       }
     });
   }
-
 
   String getSymbolForIdx(int idx) {
     return Ai.SYMBOLS[board[idx]];
@@ -98,7 +91,6 @@ class GamePageState extends State<GamePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -107,21 +99,25 @@ class GamePageState extends State<GamePage> {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(60),
-            child: Text("You are playing as X", style: TextStyle(fontSize: 25),),
+            child: Text(
+              "You are playing as X",
+              style: TextStyle(fontSize: 25),
+            ),
           ),
-           Expanded(
-             child: GridView.count(
-                      crossAxisCount: 3,
-                      // generate the widgets that will display the board
-                      children: List.generate(9, (idx) {
-                        return Field(idx: idx, onTap: _movePlayed, playerSymbol: getSymbolForIdx(idx));
-                      }),
-                  ),
-              ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 3,
+              // generate the widgets that will display the board
+              children: List.generate(9, (idx) {
+                return Field(
+                    idx: idx,
+                    onTap: _movePlayed,
+                    playerSymbol: getSymbolForIdx(idx));
+              }),
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-

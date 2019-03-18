@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Text("Welcome to Flutter Tic Tac Toe!", style: TextStyle(fontSize: 20),),
+          Text("Tic Tac Toe!", style: TextStyle(fontSize: 20),),
           Center(
             child: ButtonTheme(
               minWidth: 200,
