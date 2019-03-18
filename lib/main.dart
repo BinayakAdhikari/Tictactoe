@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'ui/home_page.dart';
 
-String title = "Flutter Tic Tac Toe";
+String title = "TicTacToe";
 
 void main() => runApp(TicTacToe());
 
@@ -12,7 +12,7 @@ class TicTacToe extends StatelessWidget {
     return MaterialApp(
       title: title,
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        primarySwatch: Colors.deepOrange
       ),
       home: HomePage(title: title),
     );

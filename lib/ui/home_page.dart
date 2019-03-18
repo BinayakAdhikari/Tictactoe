@@ -30,24 +30,25 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Text("Tic Tac Toe!", style: TextStyle(fontSize: 20),),
+          Text("TicTacToe!", style: TextStyle(fontSize: 20,color: Colors.deepOrange),),
+          Text("#",style: TextStyle(fontSize: 250,color: Colors.orange,),),
           Center(
             child: ButtonTheme(
               minWidth: 200,
               height: 80,
               child: RaisedButton(
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.amber, width: 2),
+                  side: BorderSide(color: Colors.deepOrangeAccent, width: 2),
                   borderRadius: BorderRadius.all(Radius.circular(100)),
                 ),
-                color: Colors.amber,
+                color: Colors.deepOrangeAccent,
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => GamePage(widget.title))
                   );
                 },
-                child: Text("New game!", style: TextStyle(fontSize: 20),),
+                child: Text("Start New game!", style: TextStyle(fontSize: 20,color: Colors.white),),
               ),
             ),
           ),
@@ -56,10 +57,10 @@ class _HomePageState extends State<HomePage> {
               builder: (context, snapshot) {
                 var playerCount = _presenter.getVictoryCountFromStream(snapshot);
                 if (playerCount <= 0) {
-                  return Text("No AI wins yet!", style: TextStyle(fontSize: 15));
+                  return Text("No AI wins yet!", style: TextStyle(fontSize: 15,color: Colors.deepOrangeAccent ));
                 }
 
-                return Text("Number of AI wins: $playerCount", style: TextStyle(fontSize: 15));
+                return Text("Number of AI wins: $playerCount", style: TextStyle(fontSize: 25,color: Colors.orangeAccent));
           }),
 
         ],

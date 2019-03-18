@@ -10,7 +10,7 @@ class Field extends StatelessWidget {
   Field({this.idx, this.onTap, this.playerSymbol});
 
   final BorderSide _borderSide = BorderSide(
-      color: Colors.amber,
+      color: Colors.deepOrangeAccent,
       width: 2.0,
       style: BorderStyle.solid
   );
@@ -65,7 +65,7 @@ class Field extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(0.0),
         decoration: BoxDecoration(
-            border: _determineBorder()
+            border: _determineBorder(),
         ),
         child: Center(
             child: Text(playerSymbol, style: TextStyle(fontSize: 50))
